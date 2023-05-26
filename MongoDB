@@ -1,0 +1,78 @@
+/*To study the MongoDB database and perform different operations
+Name : Kaushal Ramesh Gawali
+class : S.Y.(comp) 
+Div : A
+Roll No.: 50
+*/
+
+
+> use product
+switched to db product
+
+#inserting the data
+> db.product.insert({name:'pen',price:20,color:'blue'});
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({name:'headphone',price:200,color:'red'});
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({name:'mobile',price:2000,color:'orange'});
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({name:'computer',price:20000,color:'black'});
+WriteResult({ "nInserted" : 1 })
+> db.product.insert({name:'watch',price:50000,color:'white'});
+WriteResult({ "nInserted" : 1 })
+
+
+#displaying the data
+> db.product.find().pretty();
+{
+	"_id" : ObjectId("646b3e896691060b562c44ee"),
+	"name" : "pen",
+	"price" : 20,
+	"color" : "blue"
+}
+{
+	"_id" : ObjectId("646b3ec26691060b562c44ef"),
+	"name" : "headphone",
+	"price" : 200,
+	"color" : "red"
+}
+{
+	"_id" : ObjectId("646b3edc6691060b562c44f0"),
+	"name" : "mobile",
+	"price" : 2000,
+	"color" : "orange"
+}
+{
+	"_id" : ObjectId("646b3f236691060b562c44f1"),
+	"name" : "computer",
+	"price" : 20000,
+	"color" : "black"
+}
+{
+	"_id" : ObjectId("646b3f426691060b562c44f2"),
+	"name" : "watch",
+	"price" : 50000,
+	"color" : "white"
+}
+
+
+#displaying the specific data
+ > db.product.find({name:'mobile'}).pretty();
+{
+	"_id" : ObjectId("646b3edc6691060b562c44f0"),
+	"name" : "mobile",
+	"price" : 2000,
+	"color" : "orange"
+}
+
+#updating the data
+
+db.product.update({name:'computer'},{price:200});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+> db.product.count();
+5
+
+
+
+
